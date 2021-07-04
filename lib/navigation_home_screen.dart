@@ -4,6 +4,7 @@ import 'package:chinafood/custom_drawer/home_drawer.dart';
 import 'package:chinafood/tools/feedback_screen.dart';
 // import 'package:chinafood/home_screen.dart';
 import 'package:chinafood/tools/invite_friend_screen.dart';
+import 'package:chinafood/tools/about_us.dart';
 import 'package:chinafood/home_page/home_page_home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -71,8 +72,10 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
         setState(() {
           screenView = InviteFriend();
         });
-      } else {
-        //do in your way......
+      } else if (drawerIndex == DrawerIndex.About) {
+        setState(() {
+          screenView = AboutUs();
+        });
       }
     }
   }

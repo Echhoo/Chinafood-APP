@@ -71,7 +71,7 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                                       padding: const EdgeInsets.only(
                                           left: 4, bottom: 3),
                                       child: Text(
-                                        '2100',
+                                        '2500',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontFamily: FitnessAppTheme.fontName,
@@ -102,7 +102,7 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                                   padding: const EdgeInsets.only(
                                       left: 4, top: 2, bottom: 14),
                                   child: Text(
-                                    'of daily goal 3.5L',
+                                    '成年人饮水量2000-3000ml',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontFamily: FitnessAppTheme.fontName,
@@ -151,7 +151,7 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                                         padding:
                                             const EdgeInsets.only(left: 4.0),
                                         child: Text(
-                                          'Last drink 8:26 AM',
+                                          '每日摄入八杯水',
                                           textAlign: TextAlign.center,
                                           style: TextStyle(
                                             fontFamily:
@@ -182,7 +182,7 @@ class _WaterViewState extends State<WaterView> with TickerProviderStateMixin {
                                         ),
                                         Flexible(
                                           child: Text(
-                                            'Your bottle is empty, refill it!.',
+                                            '喝开水更健康是人们最直观的认识.',
                                             textAlign: TextAlign.start,
                                             style: TextStyle(
                                               fontFamily:

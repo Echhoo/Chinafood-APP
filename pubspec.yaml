@@ -29,6 +29,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   share_plus: ^1.1.4
+  slimy_card: ^ 1.0.4
   shared_preferences: ^0.5.6
   flutter_staggered_animations: "^0.1.2"
   font_awesome_flutter: ^9.0.0
@@ -36,8 +37,8 @@ dependencies:
   intl: ^0.17.0
   animations: ^2.0.0
   dependencies:
-  cloudbase_core: ^0.0.11
-  cloudbase_auth: ^0.0.14
+  cloudbase_core: ^0.0.9
+  cloudbase_auth: ^0.0.11
   cloudbase_function: ^0.0.2
   cloudbase_storage: ^0.0.3
   cloudbase_database: ^0.0.10
@@ -81,7 +82,6 @@ flutter:
     - assets/images/
     - assets/design_course/
     - assets/home_page/
-    - assets/three_meals/
     - assets/introduction/
   fonts:
       - family: MyIcons

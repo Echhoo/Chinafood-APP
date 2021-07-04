@@ -24,15 +24,22 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
-
+def keystorePropertiesFile = rootProject.file("key.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 android {
     compileSdkVersion 30
-
+    aaptOptions.cruncherEnabled = false //防止androidx
+    aaptOptions.useNewCruncher = false //
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
 
     defaultConfig {
+        ndk{
+            //这里其实我觉可以直接是用"armeabi-v7a"，但国内大多使用的都是"armeabi"
+            abiFilters "armeabi-v7a"
+        }
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.chinafood"
         minSdkVersion 16
@@ -41,11 +48,36 @@ android {
         versionName flutterVersionName
     }
 
+    signingConfigs {
+
+//            keyAlias 'key'
+//            keyPassword 'android'
+//            storeFile file('key/key.jks')
+//            storePassword 'android'
+            release {
+                keyAlias keystoreProperties['keyAlias']
+                keyPassword keystoreProperties['keyPassword']
+                storeFile file(keystoreProperties['storeFile'])
+                storePassword keystoreProperties['storePassword']
+            }
+
+    }
     buildTypes {
+        debug {
+            ndk {
+                //这里要加上，否则debug包会出问题,后面两个为可选，x86建议加上不然部分模拟器回报错
+                abiFilters "armeabi","armeabi-v7a","arm64-v8a", "x86"
+            }
+        }
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            ndk{
+                //这里其实我觉可以直接是用"armeabi-v7a"，但国内大多使用的都是"armeabi"
+                abiFilters "armeabi-v7a"
+            }
+            signingConfig signingConfigs.release
+            minifyEnabled true  //资源压缩设置
+            useProguard true    //代码压缩设置
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }

@@ -69,7 +69,7 @@ class _InviteFriendState extends State<InviteFriend> {
                         ],
                       ),
                       child: Material(
-                        color: Colors.transparent,
+                        color: AppTheme.primeColorLight1,
                         child: InkWell(
                           onTap: () {
                             //method here for functionality
@@ -89,7 +89,7 @@ class _InviteFriendState extends State<InviteFriend> {
                                 Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: Text(
-                                    'Share',
+                                    '分享',
                                     style: TextStyle(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.white,

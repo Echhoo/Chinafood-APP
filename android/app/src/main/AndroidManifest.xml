@@ -1,8 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.chinafood">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="chinafood"
-        android:icon="@mipmap/ic_launcher">
+        android:label="吃在中国"
+        android:icon="@mipmap/food">
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -38,4 +40,6 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+
+
 </manifest>

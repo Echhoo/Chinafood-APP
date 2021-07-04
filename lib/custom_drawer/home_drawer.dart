@@ -78,12 +78,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
         icon: Icon(Icons.home),
       ),
       DrawerList(
-        index: DrawerIndex.Help,
-        labelName: '帮助',
-        isAssetsImage: true,
-        imageName: 'assets/images/supportIcon.png',
-      ),
-      DrawerList(
         index: DrawerIndex.FeedBack,
         labelName: '意见反馈',
         icon: Icon(Icons.feedback_rounded),
@@ -109,7 +103,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.notWhite.withOpacity(0.5),
+      backgroundColor: AppTheme.white.withOpacity(0.5),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -198,32 +192,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
             height: 1,
             color: AppTheme.grey.withOpacity(0.6),
           ),
-          Column(
-            children: <Widget>[
-              ListTile(
-                title: Text(
-                  'Sign Out',
-                  style: TextStyle(
-                    fontFamily: AppTheme.fontName,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                    color: AppTheme.darkText,
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-                trailing: Icon(
-                  Icons.power_settings_new,
-                  color: Colors.red,
-                ),
-                onTap: () {
-                  onTapped();
-                },
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).padding.bottom,
-              )
-            ],
-          ),
         ],
       ),
     );
@@ -236,9 +204,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
   //
   //
   // }
-  void onTapped() {
-    print('Doing Something...'); // Print to console.
-  }
+
 
   Widget inkwell(DrawerList listData) {
     return Material(

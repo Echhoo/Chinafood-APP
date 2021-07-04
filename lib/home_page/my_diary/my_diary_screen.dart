@@ -1,4 +1,3 @@
-import 'package:chinafood/home_page/ui_view/body_measurement.dart';
 import 'package:chinafood/home_page/ui_view/glass_view.dart';
 import 'package:chinafood/home_page/ui_view/mediterranean_diet_view.dart';
 import 'package:chinafood/home_page/ui_view/title_view.dart';
@@ -61,8 +60,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
 
     listViews.add(
       TitleView(
-        titleTxt: 'Mediterranean diet',
-        subTxt: 'Details',
+        titleTxt: '摄入能量',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
             curve:
@@ -81,8 +79,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     );
     listViews.add(
       TitleView(
-        titleTxt: 'Meals today',
-        subTxt: 'Customize',
+        titleTxt: '一日三餐',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
             curve:
@@ -104,45 +101,11 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
 
     listViews.add(
       TitleView(
-        titleTxt: 'Body measurement',
-        subTxt: 'Today',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),
-    );
-
-    listViews.add(
-      BodyMeasurementView(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),
-    );
-    listViews.add(
-      TitleView(
-        titleTxt: 'Water',
-        subTxt: 'Aqua SmartBottle',
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController,
             curve:
                 Interval((1 / count) * 6, 1.0, curve: Curves.fastOutSlowIn))),
         animationController: widget.animationController,
-      ),
-    );
-
-    listViews.add(
-      WaterView(
-        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
-            CurvedAnimation(
-                parent: widget.animationController,
-                curve: Interval((1 / count) * 7, 1.0,
-                    curve: Curves.fastOutSlowIn))),
-        mainScreenAnimationController: widget.animationController,
       ),
     );
     listViews.add(
@@ -154,6 +117,17 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                       curve: Curves.fastOutSlowIn))),
           animationController: widget.animationController),
     );
+    listViews.add(
+      WaterView(
+        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
+            CurvedAnimation(
+                parent: widget.animationController,
+                curve: Interval((1 / count) * 7, 1.0,
+                    curve: Curves.fastOutSlowIn))),
+        mainScreenAnimationController: widget.animationController,
+      ),
+    );
+
   }
 
   Future<bool> getData() async {
@@ -250,11 +224,11 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text(
-                                  '个人收藏',
+                                  '健康餐食',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                    fontFamily: FitnessAppTheme.fontName,
-                                    fontWeight: FontWeight.w700,
+                                    fontFamily: "lishu",
+                                    fontWeight: FontWeight.w500,
                                     fontSize: 22 + 6 - 6 * topBarOpacity,
                                     letterSpacing: 1.2,
                                     color: FitnessAppTheme.darkerText,

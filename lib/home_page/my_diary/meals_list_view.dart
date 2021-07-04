@@ -109,7 +109,7 @@ class MealsView extends StatelessWidget {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.only(
-                        top: 32, left: 8, right: 8, bottom: 16),
+                        top: 22, left: 8, right: 8, bottom: 16),
                     child: Container(
                       decoration: BoxDecoration(
                         boxShadow: <BoxShadow>[

@@ -1,5 +1,7 @@
 
 
+import 'dart:ui';
+
 import 'package:chinafood/home_page/home_page_home_screen.dart';
 import 'package:chinafood/home_page/sentence/food_sentence.dart';
 import 'package:cloudbase_core/cloudbase_core.dart';
@@ -48,10 +50,23 @@ void main() async {
     print("登录失败");
     print('收到error********** $err');
   });
-  runApp(MyApp());
+  if(window.physicalSize.isEmpty){
+    window.onMetricsChanged = (){
+      //在回调中，size仍然有可能是0
+      if(!window.physicalSize.isEmpty){
+        window.onMetricsChanged = null;
+        runApp(MyApp());
+      }
+    };
+  } else{
+    //如果size非0，则直接runApp
+    runApp(MyApp());
+  }
+
 }
 
 class MyApp extends StatefulWidget {
+
   @override
   MyAppState createState() {
     return MyAppState();
@@ -69,6 +84,7 @@ class MyAppState extends State<MyApp> {
   }
   @override
   Widget build(BuildContext context) {
+
     _validateLogin();
     return MaterialApp(
       title: 'Flutter UI',

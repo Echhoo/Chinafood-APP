@@ -160,7 +160,7 @@ class _BottomBarViewState extends State<BottomBarView>
                             },
                           // ,
                           child: Icon(
-                            IconData(0xe657,fontFamily:'MyIcons'),
+                            const IconData(0xe657,fontFamily:'MyIcons'),
                             color: FitnessAppTheme.white,
                             size: 32,
                           ),

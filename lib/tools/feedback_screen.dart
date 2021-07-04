@@ -1,4 +1,5 @@
 import 'package:chinafood/app_theme.dart';
+import 'package:chinafood/style/dialog.dart';
 import 'package:flutter/material.dart';
 
 class FeedbackScreen extends StatefulWidget {
@@ -35,7 +36,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   Container(
                     padding: const EdgeInsets.only(top: 8),
                     child: Text(
-                      'Your FeedBack',
+                      '你的反馈',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -45,7 +46,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                   Container(
                     padding: const EdgeInsets.only(top: 16),
                     child: const Text(
-                      'Give your best time for this moment.',
+                      '给我们你的建议吧~',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 16,
@@ -71,16 +72,28 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                           ],
                         ),
                         child: Material(
-                          color: Colors.transparent,
+                          color: AppTheme.primeColorLight1,
                           child: InkWell(
                             onTap: () {
                               FocusScope.of(context).requestFocus(FocusNode());
+                              setState(() {
+                                showDialog(
+                                    context: context,
+                                    // barrierDismissible: false,
+                                    builder: (context) {
+                                      return FoodDialog(
+                                        "发送成功\n我们会在近期给你反馈~",
+
+                                        // "修复旧版本的bug",
+                                      );
+                                    });
+                              });
                             },
                             child: Center(
                               child: Padding(
                                 padding: const EdgeInsets.all(4.0),
                                 child: Text(
-                                  'Send',
+                                  '发送',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     color: Colors.white,
@@ -136,7 +149,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                 cursorColor: Colors.blue,
                 decoration: InputDecoration(
                     border: InputBorder.none,
-                    hintText: 'Enter your feedback...'),
+                    hintText: '填写你的意见...'),
               ),
             ),
           ),

@@ -29,7 +29,9 @@ class _FoodSentenceState extends State<FoodSentence>
   var month = DateTime.now().month;
   bool _ready = false;
   var data;
+  var count=0;
   var rand=1;
+  var id;
   String author;
   String content;
   // 卡叠的尺寸
@@ -52,13 +54,14 @@ class _FoodSentenceState extends State<FoodSentence>
         // data = res.data[0];
         author = res.data[rand]['author'];
         content = res.data[rand]['sen'];
+        count=res.data[rand]['count'];
+        id=res.data[rand]['id'];
       });
       // print(res.data);
     }).catchError((e) => {});
     _ready = true;
     // setState(() {});
   }
-
   @override
   void initState() {
     _getrandom();
@@ -70,11 +73,25 @@ class _FoodSentenceState extends State<FoodSentence>
   ///收藏
   ///
   Future<bool> onLikeButtonTapped(bool isLiked) async{
+    Collection collection = Global.db.collection("sentence");
     /// send your request here
     // final bool success= await sendRequest();
 
     /// if failed, you can do nothing
     // return success? !isLiked:isLiked;
+    if(isLiked){
+      collection.where({'id':id}).update(
+          {'count':count+1}).then((res) {
+
+      }).catchError((e) => {});
+      _ready = true;
+    }else{
+      collection.where({'id':id}).update(
+          {'count':count-1}).then((res) {
+
+      }).catchError((e) => {});
+      _ready = true;
+    }
 
     return !isLiked;
   }
@@ -241,9 +258,10 @@ class _FoodSentenceState extends State<FoodSentence>
                       Container(
                         margin: EdgeInsets.only(left: 20),
                         height: 38,
-                        width: 38,
+                        width: 68,
                         child:
                       LikeButton(
+                        likeCount: count,
                         onTap: onLikeButtonTapped,
                         size: 32,
                         circleColor:
@@ -260,7 +278,6 @@ class _FoodSentenceState extends State<FoodSentence>
                             color: isLiked ? Colors.redAccent: FitnessAppTheme.grey,
                           );
                         },
-                        // likeCount: 665,
                         countBuilder: (int count, bool isLiked, String text) {
                           var color = isLiked ? Colors.pink : Colors.grey;
                           Widget result;
