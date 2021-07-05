@@ -202,7 +202,7 @@ class _FoodSentenceState extends State<FoodSentence>
               Container(
                 //内容
                 //color: Colors.purple,
-                margin: EdgeInsets.fromLTRB(0, 50, 0, 20),
+                margin: EdgeInsets.fromLTRB(0, 30, 0, 20),
                 width: MediaQuery.of(context).size.width * 0.7,
                 child: Text(
                   content,

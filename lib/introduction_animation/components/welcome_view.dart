@@ -73,7 +73,7 @@ class WelcomeView extends StatelessWidget {
               SlideTransition(
                 position: _welcomeFirstHalfAnimation,
                 child: Text(
-                  "寻味·中国",
+                  "饮食·中国",
                   style: TextStyle(fontSize: 45.0, fontWeight: FontWeight.bold,fontFamily: "cfkai"),
                 ),
               ),

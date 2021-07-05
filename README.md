@@ -1,16 +1,15 @@
-# chinafood
+# Chinafood
 
 A  project to introduce china food.
 
-## Getting Started
+介绍中国饮食相关的美食、生活习惯、文学描述等。
 
-This project is a starting point for a Flutter application.
+Google Play正在审核。
 
-A few resources to get you started if this is your first Flutter project:
+app下载地址： https://www.91kkz.cn/index/app/fenfa.html?fileurl=16254524364371257
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+app下载二维码：
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image-20210705103559792](D:\IMDAPP\chinafood\README.assets\image-20210705103559792.png)
+
+相关请联系：nkuliuyin@163.com
