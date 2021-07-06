@@ -127,19 +127,19 @@ class _BottomBarViewState extends State<BottomBarView>
                     child: Container(
                       // alignment: Alignment.center,s
                       decoration: BoxDecoration(
-                        color: Colors.amber,
+                        color: AppTheme.blue.withOpacity(0.78),
                         gradient: LinearGradient(
                             colors: [
-                              Colors.amber,
-                              HexColor('#FF8C00'),
+                              AppTheme.blue.withOpacity(0.8),
+                              AppTheme.primeColorLight1.withOpacity(0.8),
                             ],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight),
                         shape: BoxShape.circle,
                         boxShadow: <BoxShadow>[
                           BoxShadow(
-                              color: Colors.deepOrange
-                                  .withOpacity(0.4),
+                              color: AppTheme.blue
+                                  .withOpacity(0.5),
                               offset: const Offset(8.0, 8.0),
                               blurRadius: 16.0),
                         ],
@@ -265,7 +265,7 @@ class _TabIconsState extends State<TabIcons> with TickerProviderStateMixin {
                       width: 8,
                       height: 8,
                       decoration: BoxDecoration(
-                        color: Colors.amber,
+                        color: AppTheme.blue.withOpacity(0.7),
                         shape: BoxShape.circle,
                       ),
                     ),

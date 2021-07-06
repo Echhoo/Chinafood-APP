@@ -188,7 +188,7 @@ class _FoodSentenceState extends State<FoodSentence>
                     fontWeight: FontWeight.normal,
                     fontSize: 18,
                     letterSpacing: -0.2,
-                    color: FitnessAppTheme.darkerText,
+                      color: FitnessAppTheme.darkerText,
                   ),
                 ),
               ),
@@ -326,7 +326,7 @@ class _FoodSentenceState extends State<FoodSentence>
                           child: Center(
                             child: Icon(
                               Icons.help_outline_rounded,
-                              color: FitnessAppTheme.grey,
+                              color: AppTheme.blue,
                             ),
                           ),
                         ),
@@ -348,7 +348,7 @@ class _FoodSentenceState extends State<FoodSentence>
                 offset: Offset(0, 4),
               )
             ],
-            color: AppTheme.white,
+            color: AppTheme.blue.withOpacity(0.8),
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(32.0),
               bottomRight: Radius.circular(32.0),

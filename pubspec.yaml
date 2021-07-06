@@ -80,7 +80,6 @@ flutter:
   # example:
   assets:
     - assets/images/
-    - assets/design_course/
     - assets/home_page/
     - assets/introduction/
   fonts:

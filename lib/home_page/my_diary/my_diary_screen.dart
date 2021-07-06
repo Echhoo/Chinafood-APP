@@ -6,6 +6,8 @@ import 'package:chinafood/home_page/my_diary/meals_list_view.dart';
 import 'package:chinafood/home_page/my_diary/water_view.dart';
 import 'package:flutter/material.dart';
 
+import '../../app_theme.dart';
+
 class MyDiaryScreen extends StatefulWidget {
   const MyDiaryScreen({Key key, this.animationController}) : super(key: key);
 
@@ -194,7 +196,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                     0.0, 30 * (1.0 - topBarAnimation.value), 0.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: FitnessAppTheme.white.withOpacity(topBarOpacity),
+                    color: AppTheme.blue.withOpacity(topBarOpacity),
                     borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(32.0),
                     ),

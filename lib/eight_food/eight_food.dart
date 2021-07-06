@@ -68,10 +68,10 @@ class _EightFoodState extends State<EightFood> with TickerProviderStateMixin {
         // ),
         alignment: Alignment.center,
         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-        color: index == i ? Theme.of(context).dividerColor : AppTheme.white,
+        color: index == i ? AppTheme.blue : AppTheme.white,
         child: new Text(title[i],
             style: TextStyle(
-                color: index == i ? AppTheme.primeColorLight1 : textColor,
+                color: index == i ? AppTheme.white : textColor,
                 fontFamily: "liuti",
                 fontWeight: FontWeight.w500,
                 fontSize: 25)),
@@ -248,7 +248,7 @@ class _EightFoodState extends State<EightFood> with TickerProviderStateMixin {
                 offset: Offset(0, 4),
               )
             ],
-            color: AppTheme.white,
+            color: AppTheme.blue,
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(32.0),
               bottomRight: Radius.circular(32.0),

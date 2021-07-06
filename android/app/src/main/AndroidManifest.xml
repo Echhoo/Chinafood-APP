@@ -2,7 +2,7 @@
     package="com.example.chinafood">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="饮食中国"
+        android:label="吃在中国"
         android:icon="@mipmap/food">
 
         <activity

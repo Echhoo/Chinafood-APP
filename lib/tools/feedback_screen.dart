@@ -1,5 +1,7 @@
 import 'package:chinafood/app_theme.dart';
+import 'package:chinafood/home_page/home_page_theme.dart';
 import 'package:chinafood/style/dialog.dart';
+import 'package:chinafood/style/flat_button.dart';
 import 'package:flutter/material.dart';
 
 class FeedbackScreen extends StatefulWidget {
@@ -20,18 +22,20 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
       child: SafeArea(
         top: false,
         child: Scaffold(
+
           backgroundColor: AppTheme.nearlyWhite,
           body: SingleChildScrollView(
             child: SizedBox(
               height: MediaQuery.of(context).size.height,
               child: Column(
                 children: <Widget>[
+                  getAppBarUI(),
                   Container(
                     padding: EdgeInsets.only(
                         top: MediaQuery.of(context).padding.top,
                         left: 16,
                         right: 16),
-                    child: Image.asset('assets/images/feedbackImage.png'),
+                    child: Image.asset('assets/images/feedback.png'),
                   ),
                   Container(
                     padding: const EdgeInsets.only(top: 8),
@@ -54,58 +58,43 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                     ),
                   ),
                   _buildComposer(),
+                  SizedBox(height: 23),
                   Padding(
                     padding: const EdgeInsets.only(top: 16),
-                    child: Center(
-                      child: Container(
-                        width: 120,
-                        height: 40,
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(4.0)),
-                          boxShadow: <BoxShadow>[
-                            BoxShadow(
-                                color: Colors.grey.withOpacity(0.6),
-                                offset: const Offset(4, 4),
-                                blurRadius: 8.0),
-                          ],
-                        ),
-                        child: Material(
-                          color: AppTheme.primeColorLight1,
-                          child: InkWell(
-                            onTap: () {
-                              FocusScope.of(context).requestFocus(FocusNode());
-                              setState(() {
-                                showDialog(
-                                    context: context,
-                                    // barrierDismissible: false,
-                                    builder: (context) {
-                                      return FoodDialog(
-                                        "发送成功\n我们会在近期给你反馈~",
+                            child: FindersFlatButton(
+                              onPressed: (){
+                                FocusScope.of(context).requestFocus(FocusNode());
+                                setState(() {
+                                  showDialog(
+                                      context: context,
+                                      // barrierDismissible: false,
+                                      builder: (context) {
+                                        return FoodDialog(
+                                          "发送成功\n我们会在近期给你反馈~",
 
-                                        // "修复旧版本的bug",
-                                      );
-                                    });
-                              });
-                            },
-                            child: Center(
-                              child: Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: Text(
-                                  '发送',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white,
-                                  ),
-                                ),
+                                          // "修复旧版本的bug",
+                                        );
+                                      });
+                                });
+                              },
+                              padding: EdgeInsets.only(
+                                top: 5,
+                                bottom: 7,
+                                left: 30,
+                                right: 30,
                               ),
+                              child: new Text(
+                                "意见反馈",
+                                style: new TextStyle(
+                                    fontSize: 18, color: Colors.white),
+                              ),
+
                             ),
                           ),
-                        ),
-                      ),
-                    ),
-                  )
+
+
+
+
                 ],
               ),
             ),
@@ -114,7 +103,61 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
       ),
     );
   }
-
+  Widget getAppBarUI() {
+    return Column(
+      children: <Widget>[
+        Container(
+          // color:
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 26,
+                color: Theme.of(context).dividerColor,
+                offset: Offset(0, 4),
+              )
+            ],
+            color: AppTheme.blue.withOpacity(0.8),
+            borderRadius: const BorderRadius.only(
+              bottomLeft: Radius.circular(32.0),
+              bottomRight: Radius.circular(32.0),
+            ),
+          ),
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: MediaQuery.of(context).padding.top * 0.7,
+              ),
+              Padding(
+                padding:
+                EdgeInsets.only(left: 16, right: 16, top: 16, bottom: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          '提些意见',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            // fontFamily: "",
+                            // fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            letterSpacing: 1.2,
+                            color: FitnessAppTheme.darkerText,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ],
+    );
+  }
   Widget _buildComposer() {
     return Padding(
       padding: const EdgeInsets.only(top: 16, left: 32, right: 32),

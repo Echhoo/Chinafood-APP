@@ -131,7 +131,7 @@ class _FoodPageState extends State<FoodPage> with TickerProviderStateMixin {
             ),
             Container(
               decoration: BoxDecoration(
-                color: AppTheme.white,
+                color: AppTheme.blue.withOpacity(0.5),
                 boxShadow: [
                   BoxShadow(
                     blurRadius: 35,
@@ -147,7 +147,7 @@ class _FoodPageState extends State<FoodPage> with TickerProviderStateMixin {
               padding: EdgeInsets.all(10.0),
               child: Text(
                   '主料',
-                  style: TextStyle(fontFamily: "liuti", fontSize: 18)),
+                  style: TextStyle(color:AppTheme.white,fontFamily: "liuti", fontSize: 18)),
             ),
             Container(
               margin: EdgeInsets.only(left:20.0,right: 20,top:5,bottom: 20),
@@ -181,7 +181,7 @@ class _FoodPageState extends State<FoodPage> with TickerProviderStateMixin {
             ),
             Container(
               decoration: BoxDecoration(
-                color: AppTheme.white,
+                color: AppTheme.blue.withOpacity(0.7),
                 boxShadow: [
                   BoxShadow(
                     blurRadius: 35,
@@ -197,7 +197,7 @@ class _FoodPageState extends State<FoodPage> with TickerProviderStateMixin {
               padding: EdgeInsets.all(10.0),
               child: Text(
                   '辅料',
-                  style: TextStyle(fontFamily: "liuti", fontSize: 18)),
+                  style: TextStyle(color:AppTheme.white,fontFamily: "liuti", fontSize: 18)),
             ),
             Container(
                 padding: EdgeInsets.only(left: 20, right: 20, bottom: 5),
@@ -245,7 +245,7 @@ class _FoodPageState extends State<FoodPage> with TickerProviderStateMixin {
                 offset: Offset(0, 4),
               )
             ],
-            color: AppTheme.white,
+            color: AppTheme.blue.withOpacity(0.8),
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(32.0),
               bottomRight: Radius.circular(32.0),

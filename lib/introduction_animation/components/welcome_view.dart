@@ -73,7 +73,7 @@ class WelcomeView extends StatelessWidget {
               SlideTransition(
                 position: _welcomeFirstHalfAnimation,
                 child: Text(
-                  "饮食·中国",
+                  "吃在·中国",
                   style: TextStyle(fontSize: 45.0, fontWeight: FontWeight.bold,fontFamily: "cfkai"),
                 ),
               ),
@@ -81,7 +81,7 @@ class WelcomeView extends StatelessWidget {
                 padding:
                     EdgeInsets.only(left: 64, right: 64, top: 16, bottom: 16),
                 child: Text(
-                  '我所谓的"清香"，即食时如坐在河边闻到新涨的春水的气味好想尝尝。\n——《岁朝清供》',
+                  '这里有中国的美食，\n这里有美食的句子，\n这里有健康的饮食习惯\n',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 23.0,fontFamily: "cfkai"),
                 ),

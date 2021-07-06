@@ -80,7 +80,7 @@ class _DrawerUserControllerState extends State<DrawerUserController> with Ticker
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppTheme.primeColorLight0,
+      backgroundColor: Colors.indigo[300].withOpacity(0.8),
       body: SingleChildScrollView(
         controller: scrollController,
         scrollDirection: Axis.horizontal,
